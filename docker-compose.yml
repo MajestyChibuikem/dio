@@ -1,0 +1,71 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15
+    container_name: dionysus-postgres
+    environment:
+      POSTGRES_DB: dionysus
+      POSTGRES_USER: dionysus
+      POSTGRES_PASSWORD: dionysus_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - dionysus-network
+
+  # Python Backend API
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: dionysus-backend
+    ports:
+      - "8008:8008"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - WEAVIATE_API_KEY=${WEAVIATE_API_KEY}
+      - AAI_TOKEN=${AAI_TOKEN}
+      - DATABASE_URL=postgresql://dionysus:dionysus_password@postgres:5432/dionysus
+    depends_on:
+      - postgres
+    networks:
+      - dionysus-network
+    volumes:
+      - ./backend:/app
+    restart: unless-stopped
+
+  # Next.js Frontend
+  frontend:
+    build:
+      context: ./webapp
+      dockerfile: Dockerfile
+    container_name: dionysus-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=postgresql://dionysus:dionysus_password@postgres:5432/dionysus
+      - GITHUB_PERSONAL_ACCESS_TOKEN=${GITHUB_PERSONAL_ACCESS_TOKEN}
+      - NOTION_API_KEY=${NOTION_API_KEY}
+      - PYTHON_AI_BACKEND_URL=http://backend:8008
+      - NEXT_PUBLIC_URL=http://localhost:3000
+      - NODE_ENV=development
+    depends_on:
+      - backend
+      - postgres
+    networks:
+      - dionysus-network
+    volumes:
+      - ./webapp:/app
+      - /app/node_modules
+      - /app/.next
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+
+networks:
+  dionysus-network:
+    driver: bridge 

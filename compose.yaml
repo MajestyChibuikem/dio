@@ -1,0 +1,30 @@
+services:
+  python-backend:
+    build:
+      context: ./backend
+    container_name: python-backend
+    restart: unless-stopped
+    init: true
+    # env_file: ./backend/.env  # Uncomment if .env file exists
+    ports:
+      - "8008:8008"  # Exposed by backend Dockerfile
+    networks:
+      - app-network
+
+  typescript-webapp:
+    build:
+      context: ./webapp
+    container_name: typescript-webapp
+    restart: unless-stopped
+    init: true
+    # env_file: ./webapp/.env  # Uncomment if .env file exists
+    ports:
+      - "3000:3000"  # Exposed by webapp Dockerfile
+    networks:
+      - app-network
+    depends_on:
+      - python-backend  # Webapp likely calls backend API
+
+networks:
+  app-network:
+    driver: bridge
