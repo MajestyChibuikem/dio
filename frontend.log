@@ -1,0 +1,15 @@
+
+> webapp@0.1.0 dev
+> next dev
+
+  ▲ Next.js 13.5.5
+  - Local:        http://localhost:3000
+  - Environments: .env
+
+ ✓ Ready in 5.6s
+ ✓ Compiled /src/middleware in 2.1s (272 modules)
+ ✓ Compiled /api/trpc/[trpc]/route in 2.3s (393 modules)
+ ○ Compiling /qna/[projectId]/page ...
+ ✓ Compiled /qna/[projectId]/page in 6s (1563 modules)
+ ✓ Compiled in 279ms (541 modules)
+[?25h

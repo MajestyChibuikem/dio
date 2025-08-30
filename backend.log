@@ -1,0 +1,22 @@
+/Users/majesty/.pyenv/versions/3.13.5/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.29.0 is exactly one major version older than the runtime version 6.31.1 at v1/aggregate.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/Users/majesty/.pyenv/versions/3.13.5/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.29.0 is exactly one major version older than the runtime version 6.31.1 at v1/base.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/Users/majesty/.pyenv/versions/3.13.5/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.29.0 is exactly one major version older than the runtime version 6.31.1 at v1/base_search.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/Users/majesty/.pyenv/versions/3.13.5/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.29.0 is exactly one major version older than the runtime version 6.31.1 at v1/batch_delete.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/Users/majesty/.pyenv/versions/3.13.5/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.29.0 is exactly one major version older than the runtime version 6.31.1 at v1/batch.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/Users/majesty/.pyenv/versions/3.13.5/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.29.0 is exactly one major version older than the runtime version 6.31.1 at v1/search_get.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/Users/majesty/.pyenv/versions/3.13.5/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.29.0 is exactly one major version older than the runtime version 6.31.1 at v1/generative.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/Users/majesty/.pyenv/versions/3.13.5/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.29.0 is exactly one major version older than the runtime version 6.31.1 at v1/properties.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/Users/majesty/.pyenv/versions/3.13.5/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.29.0 is exactly one major version older than the runtime version 6.31.1 at v1/tenants.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+INFO:     Started server process [52795]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8008 (Press CTRL+C to quit)
